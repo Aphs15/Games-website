@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedPixel Gaming - Where Gaming Dreams Come True</title>
+    <link href="StyleSheet1.css" rel="stylesheet" />
+    <link href="HomePageStyle.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="RedPixel Gaming Logo">
+            </div>
+            <nav>
+                <ul>
+                    <a href="HomePage.html">HomePage</a>
+                    <a href="Games.html">Games</a>
+                    <a href="products.html">Top 10 PCs</a>
+                    <a href="AboutUs.html">About Us</a>
+                    <a href="ContactUs.html">Contact Us</a>
+                    <a href="#" id="openModal">Sign In / Sign Up</a>
+                       <div class="checkoutimage"> <a href="Checkout.html">
+                            <img src="Images/Cart.png" alt="Cart" class="cart-icon">
+                            <span class="cart-count">0</span>
+                        </a>
+                        </div>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div id="modal-body">
+                <!-- Sign In Form -->
+                <div id="sign-in-form">
+                    <h2>Sign In</h2>
+                    <form id="auth-form">
+                        <div class="form-group">
+                            <label for="sign-in-username">Username:</label>
+                            <input type="text" id="sign-in-username" name="username" placeholder="Enter your username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sign-in-password">Password:</label>
+                            <input type="password" id="sign-in-password" name="password" placeholder="Enter your password" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="sign-in-newsletter" name="newsletter">
+                            <label for="sign-in-newsletter">Subscribe to our newsletter</label>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="submit-button">Sign In</button>
+                        </div>
+                        <p class="form-footer">Don't have an account? <a href="#" id="show-sign-up">Sign Up</a></p>
+                    </form>
+                </div>
+
+                <!-- Sign Up Form -->
+                <div id="sign-up-form" style="display: none;">
+                    <h2>Sign Up</h2>
+                    <form id="sign-up-auth-form">
+                        <div class="form-group">
+                            <label for="sign-up-username">Username:</label>
+                            <input type="text" id="sign-up-username" name="username" placeholder="Enter your username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sign-up-email">Email:</label>
+                            <input type="email" id="sign-up-email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sign-up-password">Password:</label>
+                            <input type="password" id="sign-up-password" name="password" placeholder="Enter your password" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="sign-up-newsletter" name="newsletter">
+                            <label for="sign-up-newsletter">Subscribe to our newsletter</label>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="submit-button">Sign Up</button>
+                        </div>
+                        <p class="form-footer">Already have an account? <a href="#" id="show-sign-in">Sign In</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to RedPixel Gaming</h1>
+            <p>Your ultimate destination for gaming PCs and games.</p>
+            <a href="#products" class="cta-button">Explore Products</a>
+            <a href="#games" class="cta-button">Explore Games</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="products" class="featured-section">
+        <h2>Top Gaming PCs</h2>
+        <div class="featured-products">
+            <!-- Reusable product card component -->
+            <div class="product-card">
+                <img src="Images/PCs/Pc8.jpg" alt="Gaming PC 1">
+                <h3>RedPixel Apex</h3>
+                <p>AMD Threadripper, RTX 4090, 128GB RAM, 2TB SSD - <strong>R29,000</strong></p>
+                <a href="products.html" class="details-button">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="Images/PCs/Pc1.jpg" alt="Gaming PC 2">
+                <h3>RedPixel Titan</h3>
+                <p>Intel i9 Extreme, Dual RTX 4090, 128GB RAM, 4TB SSD- <strong>R30,500</strong></p>
+                <a href="products.html" class="details-button">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="Images/PCs/P7.jpg" alt="Gaming PC 3">
+                <h3>RedPixel Stealth</h3>
+                <p>Intel i7, RTX 3060, 32GB RAM, 1TB SSD - <strong>R18,000</strong></p>
+                <a href="products.html" class="details-button">View Details</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Games Section -->
+    <section id="games" class="featured-section">
+        <h2>Top 10 Games</h2>
+        <div class="featured-games">
+            <div class="game-card">
+                <img src="Images/Games/G7.jpg" alt="Game 1">
+                <h3>Elder Scrolls V:Skyrim Special Edition </h3>
+                <p>Action RPG, Open World, Fantasy - <strong>R500</strong></p>
+                <a href="games.html" class="details-button">View Details</a>
+            </div>
+            <div class="game-card">
+                <img src="Images/Games/G3.jpg" alt="Game 2">
+                <h3>Elden Ring</h3>
+                <p>Dark Fantasy, Adventure, RPG - <strong>R699</strong></p>
+                <a href="games.html" class="details-button">View Details</a>
+            </div>
+            <div class="game-card">
+                <img src="Images/Games/G8.jpg" alt="Game 3">
+                <h3>God of War:Ragnoroak</h3>
+                <p>Adventure, Action, RPG - <strong>R999</strong></p>
+                <a href="games.html" class="details-button">View Details</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Trailers Section -->
+    <section id="trailers" class="video-section">
+        <h2>Game Trailers</h2>
+        <div class="video-container">
+            <button class="prev-button"><</button>
+            <iframe id="videoPlayer" width="800" height="450" src="https://www.youtube.com/embed/VIDEO_ID1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <button class="next-button">></button>
+        </div>
+    </section>
+
+
+    <!-- Good News Section -->
+    <section class="good-news-section">
+        <h2>Good News</h2>
+        <p>We’re excited to announce new partnerships and exclusive deals coming soon! Stay tuned for more updates and special offers.</p>
+    </section>
+
+    <!-- Banner -->
+    <section class="banner">
+        <h2>Special Offer: Get 20% Off Your First Purchase!</h2>
+        <p>Use code <strong>REDPIXGAMES</strong> at checkout. Limited time only!</p>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <h2>What Gamers Say</h2>
+        <div class="reviews-container">
+            <div class="review">
+                <img src="Images/Reviewers/Profile2.png" alt="Ryan Abernathy">
+                <p>"The gaming PCs at RedPixel are top-notch. I’ve never experienced smoother gameplay."</p>
+                <h4>Alex B.</h4>
+            </div>
+            <div class="review">
+                <img src="Images/Reviewers/Profile3.jpg" alt="IGN">
+                <p>"Their game selection is incredible! Always up to date with the hottest titles."</p>
+                <h4>Jane M.</h4>
+            </div>
+            <div class="review">
+                <img src="Images/Reviewers/Profile4 Screenrant.jpg" alt="Screenrant">
+                <p>"Best customer service and the gaming PCs are unbeatable in both price and quality!"</p>
+                <h4>Sam R.</h4>
+            </div>
+        </div>
+    </section>
+    <section class="review-submission-section">
+        <h2>Leave a Review</h2>
+        <form id="review-form">
+            <div class="form-group">
+                <label for="reviewer-name">Name:</label>
+                <input type="text" id="reviewer-name" name="reviewer-name" required>
+            </div>
+            <div class="form-group">
+                <label for="review-text">Your Review:</label>
+                <textarea id="review-text" name="review-text" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Submit Review</button>
+        </form>
+        <div id="form-response" class="form-response"></div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="RedPixel Gaming Logo">
+            </div>
+            <div class="footer-links">
+                <a href="Privacy Policy.html">Privacy Policy</a>
+                <a href="Terms of service.html">Terms of Service</a>
+                <a href="ContactUs.html">Contact Us</a>
+            </div>
+            <div class="footer-socials">
+                <a href="#">
+                    <img src="Images/Socials images/Soc1.png" alt="Facebook">
+                </a>
+                <a href="#">
+                    <img src="Images/Socials images/Soc2.png" alt="Instagram">
+                </a>
+                <a href="#">
+                    <img src="Images/Socials images/Soc3.png" alt="Twitter">
+                </a>
+            </div>
+            <p>&copy; 2024 RedPixel Gaming. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="HomePageJava.js"></script>
+</body>
+</html>

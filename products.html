@@ -1,0 +1,373 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - RedPixel Gaming</title>
+    <link href="StyleSheet1.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1b1b1b;
+            color: #fff;
+        }
+
+        header {
+            background-color: #ff0000;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid black;
+        }
+
+            header h1 {
+                margin: 0;
+                color: #fff;
+                font-size: 2.5rem;
+            }
+
+        nav {
+            margin-top: 15px;
+        }
+
+            nav a {
+                color: #fff;
+                text-decoration: none;
+                margin: 0 15px;
+                font-size: 1.2rem;
+                transition: color 0.3s ease;
+            }
+
+                nav a:hover {
+                    color: #000;
+                }
+        .cart-icon {
+            width: 50px; /* Reduced size */
+            height: 50px; /* Reduced size */
+        }
+
+        /* Cart count badge styling */
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -8px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 1px 4px;
+            font-size: 10px; /* Smaller font size */
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .product-card {
+            background-color: #2c2c2c;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .product-card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+            }
+
+            .product-card img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+
+            .product-card h3 {
+                margin: 15px 0;
+                font-size: 1.5rem;
+                color: #ff4444;
+            }
+
+            .product-card p {
+                font-size: 1.2rem;
+                color: #ccc;
+            }
+
+            .product-card input[type="checkbox"] {
+                margin-top: 10px;
+            }
+            .buy-button {
+    background-color: #ff4444;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+    .buy-button:hover {
+        background-color: #d40000;
+    }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #2c2c2c;
+            color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+        }
+
+            .modal-content h2 {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            .modal-content p {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+
+            .modal-content button {
+                background-color: #ff0000;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 1rem;
+            }
+
+                .modal-content button:hover {
+                    background-color: #d40000;
+                }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .product-card {
+                width: 90%;
+                margin: 10px 0;
+            }
+
+                .product-card img {
+                    height: 150px;
+                }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Products</h1>
+        <nav>
+            <a href="HomePage.html">HomePage</a>
+            <a href="Games.html">Games</a>
+            <a href="products.html">Top 10 PCs</a>
+            <a href="AboutUs.html">About Us</a>
+            <a href="ContactUs.html">Contact Us</a>
+            <li class="cart-button">
+                <a href="Checkout.html">
+                    <img src="Images/Cart.png" alt="Cart" class="cart-icon">
+                    <span class="cart-count">0</span>
+                </a>
+            </li>
+        </nav>
+    </header>
+
+    <section class="product-grid">
+        <h2>Top Gaming PCs</h2>
+        <!-- 10 Product Cards with checkboxes for comparison -->
+        <div class="product-card">
+            <img src="Images/PCs/Pc2.jpg" alt="Gaming Computer 1">
+            <h3>RedPixel Elite</h3>
+            <p>Intel i9, RTX 4080, 32GB RAM, 1TB SSD</p>
+            <p>R6 000</p>
+            <button class="buy-button" onclick="addToCart('RedPixel Elite', 6000)">Buy Now</button>
+            <input type="checkbox" id="pc1" class="compare-checkbox"> Compare
+        </div>
+        <div class="product-card">
+            <img src="Images/PCs/Pc3.png" alt="Gaming Computer 2">
+            <h3>RedPixel Pro Max</h3>
+            <p>AMD Ryzen 9, RTX 4090, 64GB RAM, 1TB SSD</p>
+            <p>R21 500</p>
+            <button class="buy-button" onclick="addToCart('RedPixel Pro Max', 21500)">Buy Now</button>
+            <input type="checkbox" id="pc2" class="compare-checkbox"> Compare
+        </div>
+        <div class="product-card">
+            <img src="Images/PCs/Pc4.jpg" alt="Gaming Computer 3">
+            <h3>RedPixel Ultimate</h3>
+            <p>Intel i9 Extreme, Dual RTX 3090, 128GB RAM, 2TB SSD</p>
+            <p>R13 000</p>
+            <button class="buy-button" onclick="addToCart('RedPixel Ultimate', 13000)">Buy Now</button>
+            <input type="checkbox" id="pc3" class="compare-checkbox"> Compare
+        </div>
+        <div class="product-card">
+            <img src="Images/PCs/Pc5.png" alt="Gaming Computer 4">
+            <h3>RedPixel Entry</h3>
+            <p>Intel i5, GTX 1660, 8GB RAM, 500GB SSD</p>
+            <p>R10 800</p>
+            <button class="buy-button" onclick="addToCart('RedPixel Entry', 10800)">Buy Now</button>
+            <input type="checkbox" id="pc4" class="compare-checkbox"> Compare
+        </div>
+        <div class="product-card">
+            <img src="Images/PCs/Pc6.jpg" alt="Gaming Computer 5">
+            <h3>RedPixel Starter</h3>
+            <p>AMD Ryzen 5, RTX 2060, 16GB RAM, 500GB SSD, Liquid Cooling</p>
+            <p>R14 999.99</p>
+            <button class="buy-button" onclick="addToCart('RedPixel Starter', 14999)">Buy Now</button>
+            <input type="checkbox" id="pc5" class="compare-checkbox"> Compare
+        </div>
+        <div class="product-card">
+            <img src="Images/PCs/P7.jpg" alt="Gaming Computer 6">
+            <h3>RedPixel Stealth</h3>
+            <p>Intel i7, RTX 3060, 32GB RAM, 1TB SSD</p>
+            <p>R18 000</p>
+            <button class="buy-button" onclick="addToCart('RedPixel Stealth', 18000)">Buy Now</button>
+            <input type="checkbox" id="pc6" class="compare-checkbox"> Compare
+        </div>
+        <div class="product-card">
+            <img src="Images/PCs/PC 10.jpg" alt="Gaming Computer 7">
+            <h3>RedPixel Fusion</h3>
+            <p>AMD Ryzen 7, RTX 3070, 32GB RAM, 1TB SSD</p>
+            <p>R12 000</p>
+            <button class="buy-button" onclick="addToCart('RedPixel Fusion', 12000)">Buy Now</button>
+            <input type="checkbox" id="pc7" class="compare-checkbox"> Compare
+        </div>
+        <div class="product-card">
+            <img src="Images/PCs/Pc7.jpg" alt="Gaming Computer 8">
+            <h3>RedPixel Quantum</h3>
+            <p>Intel i9, RTX 3080, 64GB RAM, 1TB SSD</p>
+            <p>R14 000</p>
+            <button class="buy-button" onclick="addToCart('RedPixel Quantum', 14000)">Buy Now</button>
+            <input type="checkbox" id="pc8" class="compare-checkbox"> Compare
+        </div>
+        <div class="product-card">
+            <img src="Images/PCs/Pc8.jpg" alt="Gaming Computer 9">
+            <h3>RedPixel Apex</h3>
+            <p>AMD Threadripper, RTX 4090, 128GB RAM, 2TB SSD</p>
+            <p>R29 000</p>
+            <button class="buy-button" onclick="addToCart('RedPixel Apex', 29000)">Buy Now</button>
+            <input type="checkbox" id="pc9" class="compare-checkbox"> Compare
+        </div>
+        <div class="product-card">
+            <img src="Images/PCs/Pc1.jpg" alt="Gaming Computer 10">
+            <h3>RedPixel Titan</h3>
+            <p>Intel i9 Extreme, Dual RTX 4090, 128GB RAM, 4TB SSD</p>
+            <p>R30 500</p>
+            <button class="buy-button" onclick="addToCart('RedPixel Titan', 30500)">Buy Now</button>
+            <input type="checkbox" id="pc10" class="compare-checkbox"> Compare
+        </div>
+        <!-- Add 9 more PCs with similar structure -->
+
+    </section>
+
+    <!-- Consoles Section -->
+    <section class="product-grid">
+        <h2>Gaming Consoles</h2>
+        <!-- Console Cards -->
+        <div class="product-card">
+            <img src="Images/Consols/Ps5.jpg" alt="PlayStation 5">
+            <h3>PlayStation 5</h3>
+            <p>CPU: 8-core AMD Zen 2, GPU: 10.28 TFLOPs, 16GB GDDR6, 825GB SSD</p>
+            <p>R12 000</p>
+            <button class="buy-button" onclick="addToCart('Playstaion 5', 12000)">Buy Now</button>
+            <input type="checkbox" id="console1" class="compare-checkbox"> Compare
+        </div>
+        <div class="product-card">
+            <img src="Images/Consols/Series X.png" alt="Xbox Series X">
+            <h3>Xbox Series X</h3>
+            <p>CPU: 8-core AMD Zen 2, GPU: 12 TFLOPs, 16GB GDDR6, 1TB SSD</p>
+            <p>R10 000</p>
+            <button class="buy-button" onclick="addToCart('Xbox Series X', 10000)">Buy Now</button>
+            <input type="checkbox" id="console2" class="compare-checkbox"> Compare
+        </div>
+        <div class="product-card">
+            <img src="Images/Consols/PS4.jpg" alt="PlayStation 4">
+            <h3>PlayStation 4</h3>
+            <p>CPU: 8-core AMD Jaguar, GPU: 1.84 TFLOPs, 8GB GDDR5, 500GB HDD</p>
+            <p>R5 000</p>
+            <button class="buy-button" onclick="addToCart('Playstation 4', 5000)">Buy Now</button>
+            <input type="checkbox" id="console3" class="compare-checkbox"> Compare
+        </div>
+        <div class="product-card">
+            <img src="Images/Consols/XBoxs.jpg" alt="Xbox One">
+            <h3>Xbox One</h3>
+            <p>CPU: 8-core AMD Jaguar, GPU: 1.31 TFLOPs, 8GB DDR3, 500GB HDD</p>
+            <p>R6 000</p>
+            <button class="buy-button" onclick="addToCart('Xbox One ', 6000)">Buy Now</button>
+            <input type="checkbox" id="console4" class="compare-checkbox"> Compare
+        </div>
+    </section>
+
+    <button onclick="compareProducts()">Compare Selected Products</button>
+
+    <!-- Comparison Modal -->
+    <div id="compareModal" class="modal">
+        <div class="modal-content">
+            <h2>Comparison Results</h2>
+            <div id="comparison-results"></div>
+            <button onclick="closeModal('compareModal')">Close</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 RedPixel Gaming. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function compareProducts() {
+            const selectedProducts = [];
+            document.querySelectorAll('.compare-checkbox').forEach((checkbox) => {
+                if (checkbox.checked) {
+                    const card = checkbox.parentElement;
+                    selectedProducts.push({
+                        name: card.querySelector('h3').innerText,
+                        specs: card.querySelector('p:nth-of-type(2)').innerText
+                    });
+                }
+            });
+
+            if (selectedProducts.length < 2) {
+                alert('Please select at least two products to compare.');
+                return;
+            }
+
+            let comparisonHTML = '<ul>';
+            selectedProducts.forEach(product => {
+                comparisonHTML += `<li><strong>${product.name}:</strong> ${product.specs}</li>`;
+            });
+            comparisonHTML += '</ul>';
+
+            document.getElementById('comparison-results').innerHTML = comparisonHTML;
+            document.getElementById('compareModal').style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+    </script>
+    <script src="Purchase JavaS.js"></script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games Showcase - RedPixel Gaming</title>
+    <link rel="stylesheet" href="StyleSheet1.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        header {
+            background-color: #ff0000;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid black;
+        }
+
+            header img {
+                width: 150px;
+                height: auto;
+            }
+
+        nav {
+            margin-top: 15px;
+        }
+
+            nav a {
+                color: #fff;
+                text-decoration: none;
+                margin: 0 15px;
+                font-size: 1.2rem;
+                transition: color 0.3s ease;
+            }
+
+                nav a:hover {
+                    color: #000;
+                }
+        .cart-icon {
+            width: 50px; /* Reduced size */
+            height: 50px; /* Reduced size */
+        }
+
+        /* Cart count badge styling */
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -8px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 1px 4px;
+            font-size: 10px; /* Smaller font size */
+        }
+        .showcase {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+            .showcase h2 {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+                color: #ff4444;
+            }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .game-card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .game-card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+            }
+
+            .game-card img {
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                border-bottom: 2px solid #ff4444;
+                border-radius: 10px;
+            }
+
+        .game-title {
+            font-size: 1.8rem;
+            color: #ff4444;
+            margin: 15px 0 10px;
+        }
+
+        .game-description {
+            font-size: 1rem;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+        .rating {
+            display: flex;
+            justify-content: center;
+            margin: 15px 0;
+        }
+
+        .star {
+            font-size: 1.5rem;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+            .star:hover,
+            .star.selected {
+                color: #ffcc00;
+            }
+
+
+        .price {
+            font-size: 1.2rem;
+            color: #ff8888;
+            margin-bottom: 10px;
+        }
+
+        .buy-button {
+            background-color: #ff4444;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+            .buy-button:hover {
+                background-color: #d40000;
+            }
+
+        footer {
+            background-color: #2c2c2c;
+            text-align: center;
+            padding: 15px;
+            color: #ccc;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="RedPixel Gaming Logo">
+        <nav>
+            <a href="HomePage.html">HomePage</a>
+            <a href="Games.html">Games</a>
+            <a href="products.html">Top 10 PCs</a>
+            <a href="AboutUs.html">About Us</a>
+            <a href="ContactUs.html">Contact Us</a>
+            <li class="cart-button">
+                <a href="Checkout.html">
+                    <img src="Images/Cart.png" alt="Cart" class="cart-icon">
+                    <span class="cart-count">0</span>
+                </a>
+            </li>
+        </nav>
+    </header>
+
+    <section class="showcase">
+        <h2>Featured Games Showcase</h2>
+        <div class="game-grid">
+            <div class="game-card" onclick="window.location.href='game-detail.html';">
+                <img src="Images/Games/G1.jpg" alt="Resident Evil 4">
+                <div class="game-title">Resident Evil 4</div>
+                <div class="game-description">Survival horror at its finest. Experience Leon Kennedy’s struggle against terrifying enemies in this critically acclaimed remake.<br><strong>Available on:</strong> PS5, Xbox Series X|S, PC</div>
+                <div class="price">R900</div>
+                <div class="rating">
+                    <span class="star" data-value="1">&#9734;</span>
+                    <span class="star" data-value="2">&#9734;</span>
+                    <span class="star" data-value="3">&#9734;</span>
+                    <span class="star" data-value="4">&#9734;</span>
+                    <span class="star" data-value="5">&#9734;</span>
+                </div>
+                <button class="buy-button" onclick="addToCart('Resident Evil 4', 900)">Buy Now</button>
+            </div>
+            <div class="game-card">
+                <img src="Images/Games/G2.png" alt="FC 24">
+                <div class="game-title">FC 24</div>
+                <div class="game-description">The latest in the football simulation series, FC 24 offers realistic gameplay and new features for football fans.<br><strong>Available on:</strong> PS5, Xbox Series X|S, PC, Nintendo Switch</div>
+                <div class="price">R800</div>
+                <div class="rating">
+                    <span class="star" data-value="1">&#9734;</span>
+                    <span class="star" data-value="2">&#9734;</span>
+                    <span class="star" data-value="3">&#9734;</span>
+                    <span class="star" data-value="4">&#9734;</span>
+                    <span class="star" data-value="5">&#9734;</span>
+                </div>
+                <button class="buy-button" onclick="addToCart('FC 24', 800)">Buy Now</button>
+            </div>
+            <div class="game-card">
+                <img src="Images/Games/G3.jpg" alt="Elden Ring">
+                <div class="game-title">Elden Ring</div>
+                <div class="game-description">A massive open-world action RPG created by FromSoftware and George R. R. Martin.<br><strong>Available on:</strong> PS5, Xbox Series X|S, PC</div>
+                <div class="price">R950</div>
+                <div class="rating">
+                    <span class="star" data-value="1">&#9734;</span>
+                    <span class="star" data-value="2">&#9734;</span>
+                    <span class="star" data-value="3">&#9734;</span>
+                    <span class="star" data-value="4">&#9734;</span>
+                    <span class="star" data-value="5">&#9734;</span>
+                </div>
+                <button class="buy-button" onclick="addToCart('Elden Ring', 950)">Buy Now</button>
+            </div>
+            <div class="game-card">
+                <img src="Images/Games/G4.jpg" alt="Call of Duty Modern Warfare 3">
+                <div class="game-title">Call of Duty: Modern Warfare 3</div>
+                <div class="game-description">Experience the latest installment in the Call of Duty series, packed with action and stunning multiplayer modes.<br><strong>Available on:</strong> PS5, Xbox Series X|S, PC</div>
+                <div class="price">R1000</div>
+                <div class="rating">
+                    <span class="star" data-value="1">&#9734;</span>
+                    <span class="star" data-value="2">&#9734;</span>
+                    <span class="star" data-value="3">&#9734;</span>
+                    <span class="star" data-value="4">&#9734;</span>
+                    <span class="star" data-value="5">&#9734;</span>
+                </div>
+                <button class="buy-button" onclick="addToCart('CallOfDuty: Modern Warfare 3', 1000)">Buy Now</button>
+            </div>
+            <div class="game-card">
+                <img src="Images/Games/G5.png" alt="GTA 5">
+                <div class="game-title">Grand Theft Auto V</div>
+                <div class="game-description">Live the life of a criminal in the sprawling world of Los Santos with immersive gameplay and endless possibilities.<br><strong>Available on:</strong> PS5, PS4, Xbox Series X|S, PC</div>
+                <div class="price">R700</div>
+                <div class="rating">
+                    <span class="star" data-value="1">&#9734;</span>
+                    <span class="star" data-value="2">&#9734;</span>
+                    <span class="star" data-value="3">&#9734;</span>
+                    <span class="star" data-value="4">&#9734;</span>
+                    <span class="star" data-value="5">&#9734;</span>
+                </div>
+                <button class="buy-button" onclick="addToCart('Grand Theft Auto: 5', 700)">Buy Now</button>
+            </div>
+            <div class="game-card">
+                <img src="Images/Games/G6.jpg" alt="Goat Simulator Goaty Edition">
+                <div class="game-title">Goat Simulator: Goaty Edition</div>
+                <div class="game-description">The hilarious, chaotic goat simulation game now with all the DLCs included in this definitive edition.<br><strong>Available on:</strong> PS4, Xbox One, PC, Nintendo Switch</div>
+                <div class="price">R500</div>
+                <div class="rating">
+                    <span class="star" data-value="1">&#9734;</span>
+                    <span class="star" data-value="2">&#9734;</span>
+                    <span class="star" data-value="3">&#9734;</span>
+                    <span class="star" data-value="4">&#9734;</span>
+                    <span class="star" data-value="5">&#9734;</span>
+                </div>
+                <button class="buy-button" onclick="addToCart('Goat Simulator: Goaty Edition', 500)">Buy Now</button>
+            </div>
+            <div class="game-card">
+                <img src="Images/Games/G7.jpg" alt="The Elder Scrolls V: Skyrim">
+                <div class="game-title">The Elder Scrolls V: Skyrim (Special Edition)</div>
+                <div class="game-description">Embark on a legendary adventure in this fantasy RPG classic, full of dragons, magic, and open-world exploration.<br><strong>Available on:</strong> PS4, Xbox One, PC, Nintendo Switch</div>
+                <div class="price">R600</div>
+                <div class="rating">
+                    <span class="star" data-value="1">&#9734;</span>
+                    <span class="star" data-value="2">&#9734;</span>
+                    <span class="star" data-value="3">&#9734;</span>
+                    <span class="star" data-value="4">&#9734;</span>
+                    <span class="star" data-value="5">&#9734;</span>
+                </div>
+                <button class="buy-button" onclick="addToCart('Elder Scrolls V: Skyrim SE', 600)">Buy Now</button>
+            </div>
+            <div class="game-card">
+                <img src="Images/Games/G8.jpg" alt="God of War: Ragnarok">
+                <div class="game-title">God of War: Ragnarok</div>
+                <div class="game-description">Join Kratos and Atreus as they face the impending Ragnarok in this action-packed Norse mythology adventure.<br><strong>Available on:</strong> PS5, PS4</div>
+                <div class="price">R1100</div>
+                <div class="rating">
+                    <span class="star" data-value="1">&#9734;</span>
+                    <span class="star" data-value="2">&#9734;</span>
+                    <span class="star" data-value="3">&#9734;</span>
+                    <span class="star" data-value="4">&#9734;</span>
+                    <span class="star" data-value="5">&#9734;</span>
+                </div>
+                <button class="buy-button" onclick="addToCart('God of War: Ragnarok', 1100)">Buy Now</button>
+            </div>
+            <div class="game-card">
+                <img src="Images/Games/G9.jpeg" alt="Marvel's Spider-Man: Miles Morales">
+                <div class="game-title">Marvel’s Spider-Man: Miles Morales</div>
+                <div class="game-description">Swing into action with Miles Morales as he takes on new responsibilities and villains in this thrilling superhero adventure.<br><strong>Available on:</strong> PS5, PS4</div>
+                <div class="price">R900.00</div>
+                <div class="rating">
+                    <span class="star" data-value="1">&#9734;</span>
+                    <span class="star" data-value="2">&#9734;</span>
+                    <span class="star" data-value="3">&#9734;</span>
+                    <span class="star" data-value="4">&#9734;</span>
+                    <span class="star" data-value="5">&#9734;</span>
+                </div>
+                <button class="buy-button" onclick="addToCart('Marvel’s Spider-Man: Miles Morales', 900)">Buy Now</button>
+            </div>
+            <div class="game-card">
+                <img src="Images/Games/G10.jpg" alt="The Witcher 3: Wild Hunt Anniversary Edition">
+                <div class="game-title">The Witcher 3: Wild Hunt Complete Edition</div>
+                <div class="game-description">Celebrate the epic journey of Geralt of Rivia with this special edition of The Witcher 3, featuring enhanced visuals and all DLCs.<br><strong>Available on:</strong> PS5, Xbox Series X|S, PC</div>
+                <div class="price">R799.99</div>
+                <div class="rating">
+                    <span class="star" data-value="1">&#9734;</span>
+                    <span class="star" data-value="2">&#9734;</span>
+                    <span class="star" data-value="3">&#9734;</span>
+                    <span class="star" data-value="4">&#9734;</span>
+                    <span class="star" data-value="5">&#9734;</span>
+                </div>
+                <button class="buy-button" onclick="addToCart('The Witcher 3: Wild Hunt Anniversary Edition', 799)">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2024 RedPixel Gaming. All Rights Reserved.
+    </footer>
+
+    <!--//Ratings Javasript--> 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            /*Use event delegation to handle clicks on star elements*/
+            document.querySelectorAll('.game-card').forEach(card => {
+                const stars = card.querySelectorAll('.star');
+
+                stars.forEach(star => {
+                    star.addEventListener('click', function () {
+                        const value = this.getAttribute('data-value');
+                        // Call the function to update stars for the specific game card
+                        updateStars(card, value);
+                        // Optionally, send rating to server or localStorage
+                        console.log('Rated with value:', value);
+                    });
+                });
+            });
+
+            function updateStars(card, rating) {
+                const stars = card.querySelectorAll('.star');
+                stars.forEach(star => {
+                    if (star.getAttribute('data-value') <= rating) {
+                        star.classList.add('selected');
+                    } else {
+                        star.classList.remove('selected');
+                    }
+                });
+            }
+        });
+    </script>
+
+    <script src="Purchase JavaS.js"></script>
+</body>
+</html>

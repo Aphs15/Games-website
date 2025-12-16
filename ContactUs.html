@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - RedPixel Gaming</title>
+    <link href="StyleSheet1.css" rel="stylesheet" />
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #333;
+        }
+
+        header {
+            background-color: #ff0000;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid black;
+        }
+
+            header h1 {
+                color: #fff;
+                font-size: 2.5em;
+            }
+
+        nav {
+            margin-top: 15px;
+        }
+
+            nav a {
+                color: #fff;
+                text-decoration: none;
+                margin: 0 15px;
+                font-size: 1.2rem;
+                transition: color 0.3s ease;
+            }
+
+                nav a:hover {
+                    color: #000;
+                }
+        .cart-icon {
+            width: 50px; /* Reduced size */
+            height: 50px; /* Reduced size */
+        }
+
+        /* Cart count badge styling */
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -8px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 1px 4px;
+            font-size: 10px; /* Smaller font size */
+        }
+
+        .contact-us {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 900px;
+            margin: 40px auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+            .contact-us h2 {
+                font-size: 2em;
+                color: #ff0000;
+                margin-bottom: 20px;
+            }
+
+            .contact-us p {
+                font-size: 1.2em;
+                margin-bottom: 30px;
+            }
+
+            .contact-us form {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .contact-us label {
+                font-weight: 600;
+                color: #333;
+            }
+
+            .contact-us input,
+            .contact-us textarea {
+                padding: 15px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                font-size: 1em;
+                transition: border-color 0.3s;
+            }
+
+                .contact-us input:focus,
+                .contact-us textarea:focus {
+                    border-color: #ff0000;
+                }
+
+            .contact-us button {
+                padding: 15px;
+                background-color: #ff0000;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 1.1em;
+                transition: background-color 0.3s;
+            }
+
+                .contact-us button:hover {
+                    background-color: #d00;
+                }
+
+        .contact-info {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+        }
+
+            .contact-info h3 {
+                font-size: 1.8em;
+                margin-bottom: 15px;
+            }
+
+            .contact-info p {
+                font-size: 1.1em;
+                margin-bottom: 10px;
+            }
+
+            .contact-info a {
+                color: #ff0000;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+                .contact-info a:hover {
+                    color: #cc0000;
+                }
+
+        /* Social Media Section */
+        .social-media {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+            .social-media h3 {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+
+            .social-media a {
+                margin: 0 10px;
+                color: #333;
+                font-size: 2em;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+                .social-media a:hover {
+                    color: #ff0000;
+                }
+
+            .social-media i {
+                padding: 10px;
+            }
+
+        /* Embedded Google Map */
+        .map {
+            margin-top: 40px;
+            position: relative;
+            height: 450px;
+        }
+
+            .map iframe {
+                border: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+            }
+
+        footer {
+            background-color: #000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+            footer p {
+                font-size: 1em;
+            }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-us {
+                padding: 20px;
+            }
+
+            .social-media a {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+    <!-- Include FontAwesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Contact Us</h1>
+        <nav>
+            <a href="HomePage.html">HomePage</a>
+            <a href="Games.html">Games</a>
+            <a href="products.html">Top 10 PCs</a>
+            <a href="AboutUs.html">About Us</a>
+            <a href="ContactUs.html">Contact Us</a>
+            <li class="cart-button">
+                <a href="Checkout.html">
+                    <img src="Images/Cart.png" alt="Cart" class="cart-icon">
+                    <span class="cart-count">0</span>
+                </a>
+            </li>
+        </nav>
+    </header>
+
+    <!-- Contact Form Section -->
+    <section class="contact-us">
+        <h2>Get in Touch</h2>
+        <p>We'd love to hear from you! Whether you have questions, feedback, or just want to say hi, feel free to reach out to us using the form below or through our contact details.</p>
+
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <!-- Contact Information Section -->
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p><strong>Email:</strong> <a href="mailto:info@redpixelgaming.com">info@redpixelgaming.com</a></p>
+            <p><strong>Phone:</strong> +123 456 7890</p>
+            <p><strong>Address:</strong> 123 Gaming St, Genesis Blvd, Pietermaritzburg, South Africa</p>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <a href="https://facebook.com/redpixelgaming" target="_blank"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://twitter.com/redpixelgaming" target="_blank"><i class="fab fa-twitter-square"></i></a>
+            <a href="https://instagram.com/redpixelgaming" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/company/redpixelgaming" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+        <!-- Google Map Embed -->
+        <div class="map">
+            <iframe src="https://maps.google.com/?q=123+Gaming+St,+Suite+456,+Tech+City,+TC+78901,+Country&amp;output=embed" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 RedPixel Gaming. All rights reserved.</p>
+    </footer>
+
+    <script src="JavaScript.js"></script>
+</body>
+</html>

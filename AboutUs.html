@@ -1,0 +1,351 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - RedPixel Gaming</title>
+    <link href="StyleSheet1.css" rel="stylesheet" />
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ff0000;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid black;
+        }
+
+            header h1 {
+                margin: 0;
+                color: #fff;
+                font-size: 2.5rem;
+            }
+
+        nav {
+            margin-top: 15px;
+        }
+
+            nav a {
+                color: #fff;
+                text-decoration: none;
+                margin: 0 15px;
+                font-size: 1.2rem;
+                transition: color 0.3s ease;
+            }
+
+                nav a:hover {
+                    color: #000;
+                }
+        .cart-icon {
+            width: 50px; /* Reduced size */
+            height: 50px; /* Reduced size */
+        }
+
+        /* Cart count badge styling */
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -8px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 1px 4px;
+            font-size: 10px; /* Smaller font size */
+        }
+
+        /* Hero section */
+        .hero {
+            position: relative;
+            height: 350px;
+            background-image: url('images/hero-background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            margin: 20px;
+            box-shadow: 0 4px 8px #fff;
+        }
+
+            .hero h1 {
+                font-size: 3.5rem;
+                margin: 0;
+                text-shadow: 2px 2px 4px #ff0000;
+                color: aliceblue;
+            }
+
+        /* About Us section */
+        .about-us {
+            padding: 40px 20px;
+        }
+
+            .about-us h2 {
+                text-align: center;
+                font-size: 2rem;
+                margin-bottom: 20px;
+                color: #ff4444;
+            }
+
+            .about-us p {
+                font-size: 1.1rem;
+                line-height: 1.6;
+                margin-bottom: 30px;
+                text-align: center;
+            }
+
+        /* Values section */
+        .values {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .value-item {
+            flex: 1 1 22%;
+            margin: 10px;
+        }
+
+            .value-item img {
+                max-width: 200px; 
+                margin-bottom: 15px;
+            }
+
+            .value-item h3 {
+                color: #ff4444;
+            }
+
+        /* Team carousel */
+        .team-carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 30px 20px;
+            scroll-behavior: smooth;
+        }
+
+        .team-member {
+            flex: 0 0 auto;
+            width: 220px;
+            text-align: center;
+            background-color: #2c2c2c;
+            border-radius: 10px;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+            .team-member:hover {
+                transform: scale(1.05);
+            }
+
+            .team-member img {
+                width: 100%;
+                border-bottom: 2px solid #ff4444;
+                border-radius: 10px 10px 0 0;
+            }
+
+            .team-member h3 {
+                margin: 15px 0;
+                color: #ff4444;
+            }
+
+            .team-member p {
+                font-size: 1rem;
+                color: #ccc;
+            }
+
+        /* Timeline section */
+        .timeline {
+            border-left: 3px solid #ddd;
+            padding: 20px;
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        .timeline-event {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+            .timeline-event::before {
+                content: '';
+                position: absolute;
+                left: -10px;
+                width: 20px;
+                height: 20px;
+                background-color: #ff4444;
+                border-radius: 50%;
+                top: 5px;
+                box-shadow: 0 0 0 5px #fff;
+            }
+
+            .timeline-event h3 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+                color: #ff4444;
+            }
+
+            .timeline-event p {
+                font-size: 1rem;
+                color: #ccc;
+            }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: #ccc;
+            margin-top: 40px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .values {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .value-item {
+                flex-basis: 100%;
+            }
+
+            .team-carousel {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>About Us</h1>
+        <nav>
+            <a href="HomePage.html">HomePage</a>
+            <a href="Games.html">Games</a>
+            <a href="products.html">Top 10 PCs</a>
+            <a href="AboutUs.html">About Us</a>
+            <a href="ContactUs.html">Contact Us</a>
+            <li class="cart-button">
+                <a href="Checkout.html">
+                    <img src="Images/Cart.png" alt="Cart" class="cart-icon">
+                    <span class="cart-count">0</span>
+                </a>
+            </li>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>RedPixel Gaming</h1>
+    </section>
+
+    <section class="about-us">
+        <h2>Who We Are</h2>
+        <p>Welcome to RedPixel Gaming, your ultimate destination for high-performance gaming computers and cutting-edge games. We are passionate about providing the best for gamers, offering top-tier hardware and the latest games to elevate your experience.</p>
+
+        <h2>Our Mission</h2>
+        <p>At RedPixel Gaming, our mission is to deliver cutting-edge technology and the best gaming products, ensuring gamers have access to superior performance and the latest innovations.</p>
+
+        <h2>Our Vision</h2>
+        <p>We envision a future where every gamer can unlock their full potential with the finest gaming equipment and software. Our goal is to become a global leader in the gaming industry, known for unmatched quality and customer service.</p>
+    </section>
+
+    <h2>Our Values</h2>
+    <section class="values">
+        <div class="value-item">
+            <img src="Images/About page images/Quality.png" alt="Quality">
+            <h3>Quality</h3>
+            <p>We value our selves in providing Top-tier products for top-tier gaming.</p>
+        </div>
+        <div class="value-item">
+            <img src="Images/About page images/Innovation.jpg" alt="Innovation">
+            <h3>Innovation</h3>
+            <p>We priorities in promoting and pushing the boundaries of gaming tech by providing the best prices for the best Pcs and consoles.</p>
+        </div>
+        <div class="value-item">
+            <img src="Images/About page images/CSF.jpg" alt="Customer Focus">
+            <h3>Customer Focus</h3>
+            <p>Our customers are our top priority.</p>
+        </div>
+        <div class="value-item">
+            <img src="Images/About page images/Inte.jpg" alt="Integrity">
+            <h3>Integrity</h3>
+            <p>We hold ourselves to always be honest and transparent in everything we do.</p>
+        </div>
+    </section>
+
+    <h2>Meet the Team</h2>
+    <section class="team-carousel">
+        <div class="team-member">
+            <img src="Images/About page images/Workers/W1.jpg" alt="John Doe">
+            <h3>David Mkhize</h3>
+            <p><strong>CEO</strong></p>
+            <p>Leading RedPixel Gaming with passion and vision.</p>
+        </div>
+        <div class="team-member">
+            <img src="Images/About page images/Workers/W6.jpg" alt="Jane Smith">
+            <h3>Johnathan Smith</h3>
+            <p><strong>Lead Developer</strong></p>
+            <p>Ensuring seamless user experience across platforms.</p>
+        </div>
+        <div class="team-member">
+            <img src="Images/About page images/Workers/W4.jpg" alt="Emily Johnson">
+            <h3>Emily Johnson</h3>
+            <p><strong>Marketing Director</strong></p>
+            <p>Building a brand that resonates with gamers worldwide.</p>
+        </div>
+        <div class="team-member">
+            <img src="Images/About page images/Workers/W5.jpg" alt="Michael Brown">
+            <h3>Lindelwa Ngcobo</h3>
+            <p><strong>Product Manager</strong></p>
+            <p>Ensuring only the best products for our customers.</p>
+        </div>
+        <div class="team-member">
+            <img src="Images/About page images/Workers/W3.jpg" alt="Sarah Wilson">
+            <h3>Sarah Wilson</h3>
+            <p><strong>Customer Support Specialist</strong></p>
+            <p>Dedicated to helping customers with any inquiries.</p>
+        </div>
+    </section>
+
+    <h2>Our Journey</h2>
+    <section class="timeline">
+        <div class="timeline-event">
+            <h3>2010: Foundation</h3>
+            <p>RedPixel Gaming was founded to revolutionize gaming with high-performance PCs and cutting-edge games.</p>
+        </div>
+        <div class="timeline-event">
+            <h3>2015: Expansion</h3>
+            <p>We expanded our range to include custom-built PCs tailored to individual gamers' needs.</p>
+        </div>
+        <div class="timeline-event">
+            <h3>2020: Major Milestone</h3>
+            <p>Achieved top gaming hardware provider status in the region.</p>
+        </div>
+        <div class="timeline-event">
+            <h3>2024: New Horizons</h3>
+            <p>Continuing our mission to innovate and grow, bringing the best gaming experiences worldwide.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 RedPixel Gaming. All rights reserved.</p>
+    </footer>
+
+    <script src="JavaScript.js"></script>
+</body>
+
+</html>
